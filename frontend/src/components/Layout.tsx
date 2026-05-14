@@ -4,6 +4,8 @@ import {
   ShoppingCart, Truck, ChevronRight,
 } from 'lucide-react'
 
+import { LogoFull } from './Logo'
+
 const navItems = [
   { to: '/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
   { to: '/inventory', icon: Package, label: 'Inventory' },
@@ -19,15 +21,7 @@ export default function Layout() {
       {/* Sidebar */}
       <aside className="w-60 flex-shrink-0 bg-slate-900 flex flex-col">
         <div className="px-6 py-5 border-b border-slate-700">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
-              <Truck size={16} className="text-white" />
-            </div>
-            <div>
-              <p className="text-white font-semibold text-sm leading-none">SCM Platform</p>
-              <p className="text-slate-400 text-xs mt-0.5">Supply Chain Analytics</p>
-            </div>
-          </div>
+          <LogoFull />
         </div>
 
         <nav className="flex-1 px-3 py-4 space-y-1 overflow-y-auto">
