@@ -1,6 +1,10 @@
 import axios from 'axios'
 
-const api = axios.create({ baseURL: '/api' })
+// In dev: proxied to localhost:8000 via vite config
+// In production: set VITE_API_URL to your Render backend URL
+const BASE_URL = import.meta.env.VITE_API_URL ? `${import.meta.env.VITE_API_URL}/api` : '/api'
+
+const api = axios.create({ baseURL: BASE_URL })
 
 export const fetchDashboardKPIs = () => api.get('/dashboard/kpis').then(r => r.data)
 export const fetchOrderTrend = () => api.get('/dashboard/order-trend').then(r => r.data)
